@@ -4,7 +4,7 @@ class CreateUserBooks < ActiveRecord::Migration[5.2]
       t.date :checkout_date
       t.date :return_date
       t.references :user, foreign_key: true
-      t.references :user, foreign_key: true
+      t.references :book, foreign_key: true
       t.boolean :return, default: false
       t.timestamps
     end
