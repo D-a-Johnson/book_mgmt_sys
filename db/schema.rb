@@ -27,10 +27,8 @@ ActiveRecord::Schema.define(version: 2020_03_06_142838) do
 
   create_table "user_books", force: :cascade do |t|
     t.date "checkout_date"
-    t.date "return_date"
     t.bigint "user_id"
     t.bigint "book_id"
-    t.boolean "return", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["book_id"], name: "index_user_books_on_book_id"
