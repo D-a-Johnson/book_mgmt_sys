@@ -9,6 +9,9 @@ class UserBooksController < ApplicationController
     @user_book.user = current_user
     @user_book.checkout_date = DateTime.current.to_date
     @user_book.save
+    @book = @user_book.book
+    @book.total_books -= 1
+    @book.save
   #  book = Book.find(params[:book_id])
   #  @user_book.book = book
    # @user_book.book.total_books = @user_book.book.total_books - 1
@@ -21,6 +24,7 @@ class UserBooksController < ApplicationController
     @user.balance -= @book.cost_day #* (Date.today - @user_book.checkout_date).to_i
     @user.save
     @book.total_books += 1
+    @book.save
     @user_book.destroy
     redirect_to root_path
   end
