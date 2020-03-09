@@ -8,6 +8,7 @@ class UserBooksController < ApplicationController
     @user_book = UserBook.create(user_book_params)
     @user_book.user = current_user
     @user_book.checkout_date = DateTime.current.to_date
+    @user_book.save
   #  book = Book.find(params[:book_id])
   #  @user_book.book = book
    # @user_book.book.total_books = @user_book.book.total_books - 1
