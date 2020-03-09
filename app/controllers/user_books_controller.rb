@@ -16,7 +16,11 @@ class UserBooksController < ApplicationController
   end
 
   def destroy
-    @user_book.user.balance = @user_book.user.balance - @user_book.book.cost_day * (Date.today - @user_book.checkout_date).to_i
+    @user = @user_book.user
+    @book = @user_book.book
+    @user.balance -= @book.cost_day #* (Date.today - @user_book.checkout_date).to_i
+    @user.save
+    @book.total_books += 1
     @user_book.destroy
     redirect_to root_path
   end
