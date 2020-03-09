@@ -1,0 +1,9 @@
+<br><br>
+<%= form_for(user_book) method: :post do %>
+  <label for="b_id">Book ID:</label>
+  <input type="text" id="book_id" name="book_id"><br><br>
+  <label for="days">Days:</label>
+  <input type="text" id="days" name="days"><br><br>
+  <input type="submit" name="button_b" value="Borrow">
+  <input type="submit" name="button_r" value="Return">
+<% end %>

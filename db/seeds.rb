@@ -64,13 +64,13 @@ Book.create!(
   )
 
 UserBook.create!(
-  user_id: 1,
+  user_id: 2,
   book_id: 1,
   checkout_date: Date.new(2020, 3, 5)
   )
 
 UserBook.create!(
-  user_id: 1,
+  user_id: 2,
   book_id: 2,
   checkout_date: Date.new(2020, 1, 15)
   )
@@ -82,7 +82,7 @@ UserBook.create!(
   )
 
 UserBook.create!(
-  user_id: 2,
+  user_id: 1,
   book_id: 1,
   checkout_date: Date.new(2020, 3, 4)
   )

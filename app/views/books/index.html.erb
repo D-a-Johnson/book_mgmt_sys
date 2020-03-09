@@ -1,3 +1,4 @@
+ <td><%= link_to "Borrow", new_user_book_path, class: "nav-link" %><td>
  <table style="width:50%">
   <tr>
     <th>ID</th>
@@ -5,6 +6,7 @@
     <th>Author</th>
     <th>Books Remaining</th>
     <th>Cost per Day</th>
+    <th>Checked out by you</th>
   </tr>
   <% @books.each do |book| %>
   <tr>
@@ -13,6 +15,14 @@
     <td><%= book.author %></td>
     <td><%= book.total_books %></td>
     <td><%= book.cost_day %></td>
+    <% book.user_books.each do |user_book| %>
+      <% if user_book.user_id == current_user.id %>
+        <td><p>Y</p></td>
+        <td><%= link_to "Return", user_book_path(user_book.id), method: :delete,class: "nav-link" %><td>
+      <% end %>
+    <% end %>
   </tr>
   <% end %>
 </table>
+
+<p>  User Balance: $<%= current_user.balance %></p>
