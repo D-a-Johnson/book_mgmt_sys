@@ -4,6 +4,9 @@ I had the idea that the assignment wanted just a general interface with no user 
 
 Goals:
 --IMPORTANT-- Book history of income and who checked out the book
+Fix Balance not displaying correctly
+Order Book list
+More user verification and disallowing certain actions
 Splash page to log-in to the index which would include all information and pop up boxes.
 An admin page to control it all and display all information.
 Get rid of user avatars or find a way to repurpose them
