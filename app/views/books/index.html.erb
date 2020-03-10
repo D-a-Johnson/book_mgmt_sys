@@ -1,4 +1,8 @@
+ <% if current_user.balance > 0 %>
  <td><%= link_to "Borrow", new_user_book_path, :action => 'go' %><td>
+  <% else %>
+ <td><%= link_to "Add to Balance", edit_user_registration_path, :action => 'go' %><td>
+  <% end%>
  <table style="width:100%">
   <tr>
     <th>ID</th>
@@ -17,8 +21,12 @@
     <td><%= book.cost_day %></td>
     <% book.user_books.each do |user_book| %>
       <% if user_book.user_id == current_user.id %>
-        <td><p>Y</p></td>
-        <td><%= link_to "Return", user_book_path(user_book.id), method: :delete,class: "nav-link" %><td>
+        <td>Y</td>
+        <% if current_user.balance >= book.cost_day %>
+          <td><%= link_to "Return", user_book_path(user_book.id), method: :delete,class: "nav-link" %><td>
+            <% else %>
+            <td>Please add to balance before returning</td>
+        <% end %>
       <% end %>
     <% end %>
   </tr>
