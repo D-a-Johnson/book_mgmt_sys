@@ -10,7 +10,6 @@ User.destroy_all
 Book.destroy_all
 UserBook.destroy_all
 
-
 User.create!(
   email: "johnson.a.derek.94@gmail.com",
   username: "Derek",
