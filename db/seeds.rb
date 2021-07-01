@@ -18,6 +18,7 @@ User.create!(
   password: "password123"
   )
 
+
 User.create!(
   email: "test.test1@gmail.com",
   username: "Joe",
